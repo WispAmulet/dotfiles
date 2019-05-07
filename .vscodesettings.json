@@ -1,0 +1,300 @@
+{
+  /*
+   * Basic
+   */
+  "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}",
+  "window.zoomLevel": -0.5,
+  "window.menuBarVisibility": "toggle",
+  "workbench.editor.tabSizing": "shrink",
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "editor.fontFamily": "'Dank Mono', 'Fira Code Medium', 'Operator Mono Medium', 'Source Code Variable', Monaco, 'Segoe UI Emoji'",
+  "editor.wordWrap": "on",
+  "editor.tabSize": 2,
+  "editor.fontSize": 20,
+  "editor.fontWeight": "bold",
+  "editor.lineHeight": 30,
+  "editor.letterSpacing": 0.6,
+  "editor.renderWhitespace": "none",
+  "editor.minimap.enabled": false,
+  "editor.acceptSuggestionOnEnter": "off",
+  "editor.snippetSuggestions": "top",
+  "editor.suggestSelection": "first",
+  "editor.fontLigatures": true,
+  "editor.rulers": [80, 100, 120],
+  "editor.cursorStyle": "line",
+  "editor.cursorWidth": 5,
+  "editor.cursorBlinking": "solid",
+  "editor.renderFinalNewline": true,
+  "files.autoSave": "off",
+  "files.trimTrailingWhitespace": true,
+  "vsintellicode.modify.editor.suggestSelection": "enabled",
+  "html.format.wrapLineLength": 100,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "prompt",
+  /* Custom workbench colors if needed */
+  "workbench.colorCustomizations": {
+    // "editorIndentGuide.background": "#ffffff1f",
+    // "statusBar.background": "#25e6cd",
+    // "activityBar.background": "#1B2B34",
+    // "sideBar.background": "#1d252d",
+    // "statusBar.noFolderBackground": "#233444",
+    // "statusBar.foreground": "#ada5a2"
+    // "statusBar.background": "#233444",
+  },
+  /* Terminal */
+  "terminal.integrated.fontFamily": "Fira Code Retina",
+  "terminal.integrated.letterSpacing": 0,
+  "terminal.integrated.fontSize": 16,
+  /*
+   * Below are for plugins
+   */
+  /* Custom CSS and JS (disabled) */
+  // Very important: Install this plugin: https://github.com/be5invis/vscode-custom-css
+  // you'll need to change this to an absolute path on your computer
+  // "vscode_custom_css.imports": [
+  // for my windows 10
+  // "file:///C:/Users/ylyza/.vscodestyles.css"
+  // for my debian 9
+  // "file:///home/suu/.vscodestyles.css"
+  // ],
+  // "vscode_custom_css.policy": true,
+  /* Code runner */
+  "code-runner.defaultLanguage": "javascript",
+  /* Stylus */
+  "languageStylus.useSeparator": false,
+  "files.associations": {
+    "*.styl": "stylus"
+  },
+  /* Emmet */
+  "emmet.excludeLanguages": ["stylus"],
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  /* Color Highlight */
+  "color-highlight.languages": [
+    "*"
+    // "!javascript"
+  ],
+  "color-highlight.matchWords": true,
+  /* ESLint */
+  "eslint.alwaysShowStatus": true,
+  // format a file when save, e.g. ctrl + s
+  "editor.formatOnSave": true,
+  // turn the default formatter off for .js .jsx .ts .tsx
+  "[javascript]": {
+    "editor.formatOnSave": false
+  },
+  "[javascriptreact]": {
+    "editor.formatOnSave": false
+  },
+  "[typescript]": {
+    "editor.formatOnSave": false
+  },
+  "[typescriptreact]": {
+    "editor.formatOnSave": false
+  },
+  // tell the ESLint plugin to run and autofix on save
+  "eslint.autoFixOnSave": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    { "language": "typescript", "autoFix": true },
+    { "language": "typescriptreact", "autoFix": true },
+    { "language": "html", "autoFix": true }
+  ],
+  /* Prettier */
+  "prettier.singleQuote": true,
+  // do NOT run Prettier on .js .jsx .ts .tsx
+  "prettier.disableLanguages": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "dart"
+  ],
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  /* TSLint (deprecated) */
+  // ! "[typescript]": {
+  // !   "editor.formatOnSave": false
+  // ! },
+  // ! "tslint.autoFixOnSave": true,
+  // ! "tslint.alwaysShowStatus": true,
+  /* Better comments */
+  "better-comments.tags": [
+    {
+      "tag": "!",
+      "color": "#FF2D00",
+      "strikethrough": true,
+      "backgroundColor": "transparent"
+    },
+    {
+      "tag": "?",
+      "color": "#bd93f9",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      "tag": "//",
+      "color": "#474747",
+      "strikethrough": true,
+      "backgroundColor": "transparent"
+    },
+    {
+      "tag": "TODO",
+      "color": "#FF8C00",
+      "strikethrough": false,
+      "backgroundColor": "tansparent"
+    },
+    {
+      "tag": "*",
+      "color": "#98C379",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    }
+  ],
+  /* Turbo Console Log */
+  "turboConsoleLog.addSemicolonInTheEnd": true,
+  "turboConsoleLog.quote": "'",
+  "turboConsoleLog.logMessagePrefix": "Log",
+  /* Gitlens */
+  "gitlens.advanced.messages": {
+    "suppressSupportGitLensNotification": true,
+    "suppressResultsExplorerNotice": true,
+    "suppressShowKeyBindingsNotice": true,
+    "suppressWelcomeNotice": true
+  },
+  "git.confirmSync": false,
+  "gitlens.keymap": "chorded",
+  "gitlens.views.fileHistory.enabled": true,
+  "gitlens.views.lineHistory.enabled": true,
+  /* Settings sync */
+  "sync.gist": "63c02f1b8e4ca085e1a2d77e5ebe296c",
+  "sync.quietSync": false,
+  "sync.askGistName": false,
+  "sync.removeExtensions": true,
+  "sync.syncExtensions": true,
+  "sync.autoDownload": false,
+  "sync.autoUpload": false,
+  "sync.forceDownload": false,
+  /* carbon-now-sh */
+  "carbon.backgroundColor": "rgba(0, 0, 0, 0)",
+  "carbon.theme": "dracula",
+  "carbon.fontSize": 16,
+  "carbon.fontFamily": "dm",
+  "carbon.lineNumbers": true,
+  /*
+   * Other languages
+   */
+  /* Python */
+  "[python]": {
+    "editor.tabSize": 4
+  },
+  /* Golang */
+  "[go]": {
+    "editor.tabSize": 4
+  },
+  /* Dart */
+  "[dart]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false
+  },
+  /*
+   * Terminal path - for Windows
+   */
+  /* bash */
+  // "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+  /* powershell */
+  // "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+  /* Custom theme colors */
+  // ~/.vscode/extensions/wesbos.theme-cobalt2-2.1.6/theme/cobalt2.json
+  "editor.tokenColorCustomizations": {
+    "[Cobalt2]": {
+      "textMateRules": [
+        {
+          "name": "[ts, tsx] - Keyword",
+          "scope": [
+            "source.ts keyword", // keywords like import, export...
+            "source.tsx keyword"
+          ],
+          "settings": {
+            "foreground": "#ff9600"
+          }
+        },
+        {
+          "name": "[js, jsx, ts, tsx] - Variable Language",
+          "scope": [
+            "source.js entity.name.type.class.js", // name of class
+            "source.jsx entity.name.type.class.jsx",
+            "source.ts entity.name.type.class.ts",
+            "source.ts entity.name.type", // override default for .ts
+            "source.tsx entity.name.type.class.tsx"
+          ],
+          "settings": {
+            "foreground": "#ffc600"
+          }
+        },
+        {
+          "name": "[js, jsx, ts, tsx] - Inherited Component",
+          "scope": [
+            "source.js entity.other.inherited-class.js",
+            "source.jsx entity.other.inherited-class.jsx",
+            "source.ts entity.other.inherited-class.ts",
+            "source.tsx entity.other.inherited-class.tsx"
+          ],
+          "settings": {
+            "foreground": "#cccccc"
+          }
+        },
+        {
+          "name": "[js, jsx, ts, tsx] - Storage Type",
+          "scope": [
+            "source.js storage.type.class.js", // class keyword
+            "source.js storage.type.function.js", // function keyword
+            "source.jsx storage.type.class.jsx",
+            "source.jsx storage.type.function.jsx",
+            "source.ts storage.type.class.ts",
+            "source.ts storage.type.function.ts",
+            "source.ts storage.type.interface.ts", // interface keyword
+            "source.ts storage.type.declare.ts", // declare keyword
+            "source.tsx storage.type.class.tsx",
+            "source.tsx storage.type.function.tsx",
+            "source.tsx storage.type.interface.tsx",
+            "source.ts storage.type.declare.tsx"
+          ],
+          "settings": {
+            "foreground": "#fb94ff",
+            "fontStyle": "italic"
+          }
+        },
+        {
+          "name": "Italicsify for Operator Mono",
+          "scope": [
+            "storage.modifier.ts", // extends keyword
+            "storage.modifier.tsx",
+            "entity.other.attribute-name.ts", // arribute names
+            "entity.other.attribute-name.tsx"
+          ],
+          "settings": {
+            "fontStyle": "italic"
+          }
+        }
+      ]
+    }
+  },
+  "workbench.editor.showTabs": true,
+  "workbench.colorTheme": "Cobalt2",
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.iconTheme": "vscode-icons",
+  "dart.devToolsTheme": "light",
+  "versionlens.showVersionLensesAtStartup": false,
+  "versionlens.showDependencyStatusesAtStartup": true,
+  "vsicons.projectDetection.autoReload": true
+}

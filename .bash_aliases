@@ -1,0 +1,5 @@
+alias wp='cd ~/workspace'
+alias sf='cd ~/software'
+alias ssrun='./software/ss/ss.AppImage'
+alias music='sudo netease-cloud-music'
+alias studiorun='cd ~/software/android-studio/bin && ./studio.sh'
