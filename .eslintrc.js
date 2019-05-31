@@ -38,7 +38,7 @@ module.exports = {
       '@typescript-eslint/parser': tsExts,
     },
     'import/resolver': {
-      'node': {
+      node: {
         extensions: allExts,
       },
     },
@@ -58,44 +58,66 @@ module.exports = {
       'LabeledStatement',
       'WithStatement',
     ],
-    'no-unused-vars': 0,
-    // 'no-unused-vars': [
-    //   1,
-    //   {
-    //     // ignoreRestSiblings: true,
-    //     argsIgnorePattern: 'res|next|^err',
-    //   },
-    // ],
-    'prefer-const': [
-      'error',
+    'no-unused-vars': [
+      1,
       {
-        destructuring: 'all',
+        // ignoreRestSiblings: true,
+        'argsIgnorePattern': 'res|next|^err',
       },
     ],
-    'arrow-body-style': [2, 'as-needed'],
     'no-unused-expressions': [
       2,
       {
-        allowTaggedTemplates: true,
+        'allowTaggedTemplates': true,
       },
     ],
     'no-param-reassign': [
       2,
       {
-        props: false,
+        'props': false,
       },
     ],
     'no-console': 1,
+    'no-underscore-dangle': 0,
+    'no-shadow': [
+      2,
+      {
+        'hoist': 'all',
+        'allow': ['resolve', 'reject', 'done', 'next', 'err', 'error'],
+      },
+    ],
+    'quotes': [
+      2,
+      'single',
+      {
+        'avoidEscape': true,
+        'allowTemplateLiterals': true,
+      },
+    ],
+    'prefer-const': [
+      2,
+      {
+        'destructuring': 'all',
+      },
+    ],
+    'arrow-body-style': [2, 'as-needed'],
     'import/prefer-default-export': 0,
-    import: 0,
+    'import': 0,
     'func-names': 0,
     'space-before-function-paren': 0,
     'comma-dangle': 0,
     'max-len': 0,
     'import/extensions': 0,
-    'no-underscore-dangle': 0,
     'consistent-return': 0,
-    'react/display-name': 1,
+    'radix': 0,
+    // react
+    'react/display-name': 0,
+    'react/destructuring-assignment': [
+      1,
+      'always',
+      { 'ignoreClassFields': true }
+    ],
+    'react/prop-types': 1,
     'react/no-array-index-key': 0,
     'react/react-in-jsx-scope': 0,
     'react/prefer-stateless-function': 0,
@@ -106,30 +128,14 @@ module.exports = {
     'react/jsx-filename-extension': [
       1,
       {
-        extensions: ['.js', '.jsx', 'tsx'],
-      },
-    ],
-    radix: 0,
-    'no-shadow': [
-      2,
-      {
-        hoist: 'all',
-        allow: ['resolve', 'reject', 'done', 'next', 'err', 'error'],
-      },
-    ],
-    quotes: [
-      2,
-      'single',
-      {
-        avoidEscape: true,
-        allowTemplateLiterals: true,
+        'extensions': ['.js', '.jsx', 'tsx'],
       },
     ],
     'jsx-a11y/href-no-hash': 'off',
     'jsx-a11y/anchor-is-valid': [
       1,
       {
-        aspects: ['invalidHref'],
+        'aspects': ['invalidHref'],
       },
     ],
     'react-hooks/rules-of-hooks': 2,
@@ -138,9 +144,11 @@ module.exports = {
     'prettier/prettier': [
       2,
       {
-        trailingComma: 'es5',
-        singleQuote: true,
-        printWidth: 80,
+        'trailingComma': 'es5',
+        'singleQuote': true,
+        'semi': true,
+        // tabWidth: 2,
+        'printWidth': 80,
       },
     ],
   },
