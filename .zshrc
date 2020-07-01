@@ -2,11 +2,12 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/suu/.oh-my-zsh"
+export ZSH=/home/suu/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+
 ZSH_THEME="agnoster"
 # ZSH_THEME="spaceship"
 
@@ -37,7 +38,7 @@ ZSH_THEME="agnoster"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -49,11 +50,8 @@ ZSH_THEME="agnoster"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -66,19 +64,17 @@ plugins=(
   git
   npm
   node
-  debian
   vscode
-  ng
   web-search
   z
+  # custom plugins
+  git-open
   command-time
   zsh-autosuggestions
   zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
-### Add aliases in `~/.bash_aliases` to zsh
-source ~/.bash_aliases
 
 # User configuration
 
@@ -108,15 +104,38 @@ source ~/.bash_aliases
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
 
-### Add nvm to zsh
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-
-### Add default user to hide user@hostname when using agnoster theme
+# Add default user to hide user@hostname when using agnoster theme
 DEFAULT_USER=$USER
 
-###
+# Add nvm to zsh
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+
+# Plugin
+# command-time
 ZSH_COMMAND_TIME_MIN_SECONDS=3
 ZSH_COMMAND_TIME_MSG="Took: %s"
 ZSH_COMMAND_TIME_COLOR="cyan"
+
+# PATH
+# default browser
+export BROWSER="/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe"
+# proxychains
+export PROXYCHAINS_CONF_FILE="/home/suu/.proxychains/proxychains.conf"
+export PATH="/home/suu/.local/bin:$PATH"
+# deno
+export DENO_INSTALL="/home/suu/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+# go
+export PATH=$PATH:/usr/local/go/bin
+export GO111MODULE=on
+export GOPROXY=https://goproxy.cn,direct
+# shfmt
+export PATH=$PATH:/home/suu/go/bin
+# rust
+export PATH=$PATH:/home/suu/.cargo/bin
