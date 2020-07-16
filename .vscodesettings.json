@@ -1,10 +1,11 @@
 {
   /*
-   * Basic
+   @ Basic Settings
    */
   "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}",
   "window.zoomLevel": -1,
   "window.newWindowDimensions": "inherit",
+  "window.menuBarVisibility": "toggle",
   "editor.renderControlCharacters": false,
   "editor.fontFamily": "'Cascadia Code PL ?', 'Dank Mono ?', 'Operator Mono', 'Fira Code Retina', 'Courier New', 'Microsoft Yahei', 'Noto Color Emoji'",
   "editor.wordWrap": "on",
@@ -24,26 +25,23 @@
   "editor.cursorWidth": 5,
   "editor.cursorBlinking": "solid",
   "editor.renderFinalNewline": true,
-  "breadcrumbs.enabled": false,
-  "files.autoSave": "off",
-  "files.trimTrailingWhitespace": true,
+  "workbench.colorTheme": "Cobalt2",
   "workbench.iconTheme": "vscode-icons",
   "workbench.editor.showTabs": true,
   "workbench.editor.tabSizing": "shrink",
   "workbench.activityBar.visible": true,
   "workbench.editor.enablePreviewFromQuickOpen": false,
-  /* Custom workbench colors if needed */
-  "workbench.colorCustomizations": {
-    "scrollbarSlider.background": "#355166cc"
-    // "editorIndentGuide.background": "#ffffff1f",
-    // "statusBar.background": "#25e6cd",
-    // "activityBar.background": "#1B2B34",
-    // "sideBar.background": "#1d252d",
-    // "statusBar.noFolderBackground": "#233444",
-    // "statusBar.foreground": "#ada5a2"
-    // "statusBar.background": "#233444",
+  "breadcrumbs.enabled": false,
+  "debug.javascript.codelens.npmScripts": "never",
+  "files.autoSave": "off",
+  "files.trimTrailingWhitespace": true,
+  "files.associations": {
+    "*.styl": "stylus",
+    "*.cjson": "jsonc",
+    "*.wxss": "css",
+    "*.wxs": "javascript"
   },
-  /* Terminal */
+  //* Terminal
   "terminal.integrated.fontFamily": "'Cascadia Code PL', 'Fira Code Retina', 'Noto Color Emoji'",
   "terminal.integrated.letterSpacing": 1,
   "terminal.integrated.fontSize": 16,
@@ -54,8 +52,13 @@
     "--disable-directwrite-for-ui",
     "--disable-font-antialiasing"
   ],
+  //* Terminal path - for Windows
+  /* bash */
+  // "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+  /* powershell */
+  // "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
   /*
-   * Plugins
+   @ Plugins
    */
   /* Custom CSS and JS (disabled) */
   // Very important: Install this plugin: https://github.com/be5invis/vscode-custom-css
@@ -67,82 +70,23 @@
   // "file:///home/suu/.vscodestyles.css"
   // ],
   // "vscode_custom_css.policy": true,
-  /* Code runner */
-  "code-runner.defaultLanguage": "javascript",
-  /* Stylus */
-  "languageStylus.useSeparator": false,
-  "files.associations": {
-    "*.styl": "stylus",
-    "*.cjson": "jsonc",
-    "*.wxss": "css",
-    "*.wxs": "javascript"
+  //* :emojisense:
+  "emojisense.languages": {
+    "markdown": true,
+    "plaintext": {
+      "markupCompletionsEnabled": false,
+      "emojiDecoratorsEnabled": false
+    },
+    "git-commit": true,
+    "javascript": true,
+    "typescript": true,
+    "typescriptreact": true
   },
-  /* Emmet */
-  "emmet.excludeLanguages": ["stylus"],
-  "emmet.includeLanguages": {
-    "javascript": "javascriptreact",
-    "wxml": "html"
-  },
-  /* Color Highlight */
-  "color-highlight.languages": [
-    "*"
-    // "!javascript"
-  ],
-  "color-highlight.matchWords": true,
-  /* ESLint */
-  "eslint.alwaysShowStatus": true,
-  // format a file when save, e.g. ctrl + s
-  "editor.formatOnSave": true,
-  // disable the default formatter for .js .jsx .ts .tsx files
-  "[javascript]": {
-    "editor.formatOnSave": false
-  },
-  "[javascriptreact]": {
-    "editor.formatOnSave": false
-  },
-  "[typescript]": {
-    "editor.formatOnSave": false
-  },
-  "[typescriptreact]": {
-    "editor.formatOnSave": false
-  },
-  // tell the ESLint plugin to auto fix on save
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  },
-  /* Prettier */
-  "prettier.singleQuote": true,
-  // disable Prettier extension for .js .jsx .ts .tsx files
-  // because we are using EsLint's prettier plugin to auto format
-  // we don't want VSCode's Prettier extension format these files at the same time
-  // and Prettier will still work with other languages as usual
-  "prettier.disableLanguages": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact",
-    "dart"
-  ],
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  /* TSLint (deprecated) */
-  // ! "[typescript]": {
-  // !   "editor.formatOnSave": false
-  // ! },
-  // ! "tslint.autoFixOnSave": true,
-  // ! "tslint.alwaysShowStatus": true,
-  /* Better comments */
+  //* Better comments
   "better-comments.tags": [
     {
       "tag": "!",
-      "color": "#FF2D00",
+      "color": "#ff2d00",
       "strikethrough": true,
       "backgroundColor": "transparent"
     },
@@ -166,117 +110,241 @@
     },
     {
       "tag": "*",
-      "color": "#98C379",
+      "color": "#98c379",
       "strikethrough": false,
       "backgroundColor": "transparent"
+    },
+    {
+      "tag": "@",
+      "color": "#fff",
+      "strikethrough": false,
+      "backgroundColor": "#98c379"
     }
   ],
-  /* Gitlens */
+  //* carbon-now-sh
+  "carbon.backgroundColor": "rgba(0, 0, 0, 0)",
+  "carbon.theme": "dracula",
+  "carbon.fontSize": 16,
+  "carbon.fontFamily": "dm",
+  "carbon.lineNumbers": true,
+  //* Code runner
+  "code-runner.defaultLanguage": "javascript",
+  //* Color Highlight
+  "color-highlight.languages": [
+    "*"
+    // "!javascript"
+  ],
+  "color-highlight.matchWords": true,
+  //* Emmet
+  "emmet.excludeLanguages": ["stylus"],
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "wxml": "html"
+  },
+  //* ESLint & Prettier
+  "eslint.alwaysShowStatus": true,
+  // format a file when save, e.g. ctrl + s
+  "editor.formatOnSave": true,
+  // disable the default formatter for .js .jsx .ts .tsx files
+  "[javascript]": {
+    "editor.formatOnSave": false
+  },
+  "[javascriptreact]": {
+    "editor.formatOnSave": false
+  },
+  "[typescript]": {
+    "editor.formatOnSave": false
+  },
+  "[typescriptreact]": {
+    "editor.formatOnSave": false
+  },
+  // tell the ESLint plugin to auto fix on save
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "prettier.singleQuote": true,
+  // disable Prettier extension for .js .jsx .ts .tsx files
+  // because we are using EsLint's prettier plugin to auto format
+  // we don't want VSCode's Prettier extension format these files at the same time
+  // and Prettier will still work with other languages as usual
+  "prettier.disableLanguages": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "dart"
+  ],
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  //* Git & Gitlens
+  "git.confirmSync": false,
   "gitlens.advanced.messages": {
     "suppressSupportGitLensNotification": true,
     "suppressResultsExplorerNotice": true,
     "suppressShowKeyBindingsNotice": true,
     "suppressWelcomeNotice": true
   },
-  "git.confirmSync": false,
   "gitlens.keymap": "chorded",
   "gitlens.views.fileHistory.enabled": true,
   "gitlens.views.lineHistory.enabled": true,
-  /* Settings sync */
-  "sync.gist": "",
-  "sync.quietSync": false,
-  "sync.removeExtensions": true,
-  "sync.syncExtensions": true,
+  //* Jest
+  "jest.autoEnable": false,
+  "jest.debugMode": true,
+  //* Settings Sync
+  "sync.gist": "a0bcf29d6bc2a11c4190180e47f6d15c",
   "sync.autoDownload": false,
   "sync.autoUpload": false,
   "sync.forceDownload": false,
-  /* carbon-now-sh */
-  "carbon.backgroundColor": "rgba(0, 0, 0, 0)",
-  "carbon.theme": "dracula",
-  "carbon.fontSize": 16,
-  "carbon.fontFamily": "dm",
-  "carbon.lineNumbers": true,
-  /* Version lens */
+  "sync.quietSync": false,
+  "sync.removeExtensions": true,
+  "sync.syncExtensions": true,
+  //* Shell Format
+  "shellformat.path": "/home/suu/go/bin/shfmt",
+  //* Snipsnap - Workspace Snippets
+  "snipsnap.silent": true,
+  //* Stylus
+  "languageStylus.useSeparator": false,
+  //*! TSLint (deprecated)
+  //! "[typescript]": {
+  //!   "editor.formatOnSave": false
+  //! },
+  //! "tslint.autoFixOnSave": true,
+  //! "tslint.alwaysShowStatus": true,
+  //* Version lens
   "versionlens.showVersionLensesAtStartup": false,
   "versionlens.showDependencyStatusesAtStartup": true,
-  /* Jest */
-  "jest.autoEnable": false,
-  "jest.debugMode": true,
-  /* :emojisense: */
-  "emojisense.languages": {
-    "markdown": true,
-    "plaintext": {
-      "markupCompletionsEnabled": false,
-      "emojiDecoratorsEnabled": false
-    },
-    "git-commit": true,
-    "javascript": true,
-    "typescript": true,
-    "typescriptreact": true
-  },
-  /* Code spell */
-  // "cSpell.showStatus": false
+  //* Code Spell
+  // "cSpell.showStatus": false,
+  "cSpell.userWords": [
+    "Deno",
+    "Unprocessable",
+    "browserslist",
+    "esnext",
+    "middlewares",
+    "prestart",
+    "scrollbar",
+    "wispamulet"
+  ],
   /*
-   * Languages
-   */
+   @ Languages
+  */
   "html.format.wrapLineLength": 100,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "typescript.updateImportsOnFileMove.enabled": "always",
-  /* C */
-  "cmake.configureOnOpen": true,
-  "C_Cpp.updateChannel": "Insiders",
-  "C_Cpp.default.intelliSenseMode": "msvc-x64",
+  //* C
   "[c]": {
     "editor.tabSize": 4
   },
   "[cpp]": {
     "editor.tabSize": 4
   },
+  "cmake.configureOnOpen": true,
+  "C_Cpp.updateChannel": "Insiders",
+  "C_Cpp.default.intelliSenseMode": "msvc-x64",
   // "C_Cpp.clang_format_path": "/usr/bin/clang-format",
-  /* Python */
-  "python.jediEnabled": false,
-  "[python]": {
-    "editor.tabSize": 4
-  },
-  /* Golang */
-  "[go]": {
-    "editor.tabSize": 4
-  },
-  /* Dart */
-  "dart.devToolsTheme": "light",
+  //* Dart
   "[dart]": {
     "editor.tabSize": 2,
     "editor.insertSpaces": true,
     "editor.detectIndentation": false
   },
+  "dart.devToolsTheme": "light",
+  //* Golang
+  "[go]": {
+    "editor.tabSize": 4
+  },
+  //* Python
+  "[python]": {
+    "editor.tabSize": 4
+  },
+  "python.languageServer": "Microsoft",
+  "python.jediEnabled": false,
   /*
-   * Terminal path - for Windows
-   */
-  /* bash */
-  // "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
-  /* powershell */
-  // "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
-  /* Custom theme colors */
+   @ Custom colors
+  */
+  //* Workbench colors
+  "workbench.colorCustomizations": {
+    "[Cobalt2]": {
+      "scrollbarSlider.background": "#355166cc"
+      // "scrollbarSlider.background": "#2f3336cc",
+      // "editor.background": "#000",
+      // "editor.foreground": "#d9d9d9",
+      // "editorRuler.foreground": "#2f3336",
+      // "tab.inactiveBackground": "#001212cc",
+      // "tab.activeBackground": "#000",
+      // "statusBar.background": "#000",
+      // "sideBar.background": "#000",
+      // "panel.background": "#ff0000",
+      // "list.focusBackground": "#000"
+    }
+  },
+  //* Custom theme colors
   // ~/.vscode/extensions/wesbos.theme-cobalt2-2.1.6/theme/cobalt2.json
-  /*
-   * Theme color customization
-   */
   "editor.tokenColorCustomizations": {
+    "[Dracula Soft]": {
+      "textMateRules": [{}]
+    },
     "[Cobalt2]": {
       "textMateRules": [
-        {
-          "name": "[js, jsx, ts, tsx] - Support",
-          "scope": [
-            "source.js support.type",
-            "source.jsx support.type",
-            "source.ts support.type",
-            "source.tsx support.type"
-          ],
-          "settings": {
-            "foreground": "#80ffbb",
-            "fontStyle": "italic"
-          }
-        },
+        // {
+        //   "name": "[HTML] - Entity Name",
+        //   "scope": "text.html.basic entity.name",
+        //   "settings": {
+        //     "foreground": "#d9d9d9"
+        //   }
+        // },
+        // {
+        //   "name": "Meta",
+        //   "scope": "meta",
+        //   "settings": {
+        //     "foreground": "#d9d9d9"
+        //   }
+        // },
+        // {
+        //   "name": "Meta Brace",
+        //   "scope": "meta.brace",
+        //   "settings": {
+        //     "foreground": "#d9d9d9"
+        //   }
+        // },
+        // {
+        //   "name": "Punctuation",
+        //   "scope": "punctuation",
+        //   "settings": {
+        //     "foreground": "#d9d9d9"
+        //   }
+        // },
+        // {
+        //   "name": "Support Variable Property DOM",
+        //   "scope": "support.variable.property.dom",
+        //   "settings": {
+        //     "foreground": "#d9d9d9"
+        //   }
+        // },
+        // {
+        //   "name": "[JSON] - String",
+        //   "scope": [
+        //     "source.json string",
+        //     "source.json punctuation.definition.string"
+        //   ],
+        //   "settings": {
+        //     "foreground": "#d9d9d9"
+        //   }
+        // },
+        // {
+        //   "name": "Variable",
+        //   "scope": "variable",
+        //   "settings": {
+        //     "foreground": "#d9d9d9"
+        //   }
+        // },
         {
           // Keyword => `import`, `default`, ...
           "name": "[ts, tsx] - Keyword",
@@ -296,21 +364,6 @@
           }
         },
         {
-          // Entity color => class `Home`
-          "name": "[js, jsx, ts, tsx] - Entity Name Type",
-          "scope": [
-            "source.js entity.name.type.class.js", // override default setting
-            "source.js entity.name.type",
-            "source.jsx entity.name.type",
-            "source.ts entity.name.type",
-            "source.tsx entity.name.type"
-          ],
-          "settings": {
-            "foreground": "#80ffbb"
-            // "fontStyle": "italic"
-          }
-        },
-        {
           // Inherited component => class Home extends React.`Component`
           "name": "[js, jsx, ts, tsx] - Inherited Component",
           "scope": [
@@ -320,7 +373,8 @@
             "source.tsx entity.other.inherited-class.tsx"
           ],
           "settings": {
-            "foreground": "#cccccc"
+            "foreground": "#cccccc",
+            "fontStyle": "italic"
           }
         },
         {
@@ -338,47 +392,110 @@
         },
         {
           // Keyword => `function`
-          "name": "[js, jsx, ts, tsx] - Storage Type",
+          "name": "[js, jsx, ts, tsx] - Keyword function",
           "scope": [
             "source.js storage.type.function.js",
             "source.jsx storage.type.function.jsx",
             "source.ts storage.type.function.ts",
-            "source.tsx storage.type.function.tsx"
+            "source.tsx storage.type.function.tsx",
+            "storage.new.js"
           ],
           "settings": {
-            "foreground": "#fb94ff"
-            // "fontStyle": "italic"
+            "foreground": "#fb94ff",
+            "fontStyle": "italic"
           }
         },
         {
           "name": "Italicsify for Operator Mono",
           "scope": [
-            "storage.modifier.ts", // extends keyword
-            "storage.modifier.tsx",
+            // "storage.modifier.ts", // extends, implements keyword
+            // "storage.modifier.tsx",
             "entity.other.attribute-name.ts", // attribute names
             "entity.other.attribute-name.tsx"
           ],
           "settings": {
+            "foreground": "#ffc600",
+            "fontStyle": "italic"
+          }
+        },
+        {
+          "name": "Italicsify for Operator Mono",
+          "scope": [
+            "storage.modifier.js", // extends, implements keyword
+            "storage.modifier.jsx"
+          ],
+          "settings": {
+            "foreground": "#ff9d00",
+            "fontStyle": "regular"
+          }
+        },
+        {
+          "name": "suppport", //???
+          "scope": ["source.ts support.type", "source.tsx support.type"],
+          "settings": {
+            "foreground": "#80ffbb",
+            "fontStyle": "italic"
+          }
+        },
+        {
+          "name": "css & css-in-js properties",
+          "scope": [
+            "source.css support.type.property-name",
+            "source.js support.type.property-name",
+            "source.jsx support.type.property-name",
+            "source.ts support.type.property-name",
+            "source.tsx support.type.property-name"
+          ],
+          "settings": {
+            "foreground": "#ffee80",
+            "fontStyle": "italic"
+          }
+        },
+        {
+          "name": "Class Type Interface",
+          "scope": ["entity.name.type"],
+          "settings": {
+            "foreground": "#80ffbb",
+            "fontStyle": "italic"
+          }
+        },
+        {
+          "name": "Class Type Interface",
+          "scope": [
+            "entity.name.type.class",
+            "source.js entity.name.type.class.js" // Class, override default setting
+          ],
+          "settings": {
+            "foreground": "#80ffbb",
+            "fontStyle": "normal" // class reset to no-italic
+          }
+        },
+        {
+          "name": "Keyword new",
+          "scope": ["keyword.operator.new"],
+          "settings": {
+            "foreground": "#fb94ff",
+            "fontStyle": "italic"
+          }
+        },
+        {
+          "name": "this, super, self, etc.",
+          "scope": [
+            "keyword.expressions-and-types.swift",
+            "keyword.other.this",
+            "variable.language",
+            "variable.language punctuation.definition.variable.php",
+            "variable.other.readwrite.instance.ruby",
+            "variable.parameter.function.language.special"
+          ],
+          "settings": {
+            "foreground": "#fb94ff",
             "fontStyle": "italic"
           }
         }
       ]
     }
   },
-  "workbench.colorTheme": "Cobalt2",
-  "cSpell.userWords": [
-    "Deno",
-    "Unprocessable",
-    "browserslist",
-    "esnext",
-    "middlewares",
-    "prestart",
-    "scrollbar",
-    "wispamulet"
-  ],
-  "window.menuBarVisibility": "toggle",
-  "shellformat.path": "/home/suu/go/bin/shfmt",
-  "python.languageServer": "Microsoft",
-  "debug.javascript.codelens.npmScripts": "never",
-  "snipsnap.silent": true
+  "gitlens.views.repositories.files.layout": "list",
+  "vsicons.dontShowNewVersionMessage": true
 }
