@@ -1,0 +1,122 @@
+{
+  // ...
+
+  //@ custom settings
+  "alwaysShowTabs": false,
+  "showTabsInTitlebar": true,
+  "showTerminalTitleInTitlebar": false,
+  "tabWidthMode": "equal",
+
+  "profiles": {
+    // ...
+
+    "list": [
+      {
+        // ...
+
+        //@ custom settings
+        "colorScheme": "Cobalt2 Terminal",
+        "fontFace": "Cascadia Code PL",
+        "fontSize": 12,
+        "cursorColor": "#ffc600",
+        "cursorShape": "filledBox",
+        "cursorHeight": 25,
+        "padding": "0",
+        "useAcrylic": true,
+        "acrylicOpacity": 0.1,
+        "selectionBackground": "#ffc600"
+      }
+    ]
+  },
+
+  "schemes": [
+    {
+      "name": "Cobalt2 Terminal",
+      // "background": "#282C34",
+      // "black": "#282C34",
+      "background": "#000000",
+      "black": "#000000",
+      "blue": "#0088ff",
+      "brightBlack": "#0050A4",
+      "brightBlue": "#0088ff",
+      "brightCyan": "#80fcff",
+      "brightGreen": "#3ad900",
+      "brightPurple": "#fb94ff",
+      "brightRed": "#ff628c",
+      "brightWhite": "#c7c7c7",
+      "brightYellow": "#ffc600",
+      "cyan": "#80fcff",
+      // "foreground": "#ffffff",
+      "foreground": "#d9d9d9",
+      "green": "#3ad900",
+      "purple": "#fb94ff",
+      "red": "#ff628c",
+      "white": "#c7c7c7",
+      "yellow": "#ffc600"
+    }
+  ],
+
+  "keybindings": [
+    { "command": { "action": "copy", "singleLine": false }, "keys": "ctrl+c" },
+    { "command": "paste", "keys": "ctrl+v" },
+
+    // Press Ctrl+Shift+F to open the search box
+    { "command": "find", "keys": "ctrl+shift+f" },
+
+    // Press Alt+Shift+D to open a new pane.
+    // - "split": "auto" makes this pane open in the direction that provides the most surface area.
+    // - "splitMode": "duplicate" makes the new pane use the focused pane's profile.
+    // To learn more about panes, visit https://aka.ms/terminal-panes
+    {
+      "command": {
+        "action": "splitPane",
+        "split": "auto",
+        "splitMode": "duplicate"
+      },
+      "keys": "alt+shift+d"
+    },
+
+    //@ custom settings
+    { "command": "openSettings", "keys": "ctrl+," },
+    { "command": "duplicateTab", "keys": "ctrl+d" },
+    { "command": "closeTab", "keys": "ctrl+w" },
+    { "command": "prevTab", "keys": "ctrl+pgup" },
+    { "command": "nextTab", "keys": "ctrl+pgdn" },
+    {
+      "command": { "action": "newTab", "index": 3 },
+      "keys": "ctrl+shift+d"
+    },
+    {
+      "command": { "action": "newTab", "index": 4 },
+      "keys": "ctrl+shift+k"
+    },
+    {
+      "command": { "action": "switchToTab", "index": 0 },
+      "keys": "alt+1"
+    },
+    {
+      "command": { "action": "switchToTab", "index": 1 },
+      "keys": "alt+2"
+    },
+    {
+      "command": { "action": "switchToTab", "index": 2 },
+      "keys": "alt+3"
+    },
+    {
+      "command": { "action": "switchToTab", "index": 3 },
+      "keys": "alt+4"
+    },
+    {
+      "command": { "action": "switchToTab", "index": 4 },
+      "keys": "alt+5"
+    },
+    {
+      "command": { "action": "switchToTab", "index": 5 },
+      "keys": "alt+6"
+    },
+    {
+      "command": { "action": "switchToTab", "index": 6 },
+      "keys": "alt+7"
+    }
+  ]
+}
